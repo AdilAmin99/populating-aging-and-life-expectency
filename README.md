@@ -1,0 +1,137 @@
+# Population Ageing and Life Expectancy Across the European Union (2010–2024)
+
+**A Reproducible Statistical Analysis of the EU-27**
+
+**Author:** Adil Amin\
+**Affiliation:** Department of Statistics, GC University Lahore\
+**Report Date:** 26 October 2026
+
+## Project Overview
+
+This project examines demographic change across the 27 European Union member countries from 2010 to 2024. Using Eurostat data, the study investigates population ageing, life expectancy at birth, female–male differences in longevity, and demographic disruptions during 2020–2022.
+
+The research also explores the statistical relationship between population ageing and life expectancy using descriptive statistics, regression analysis, and panel-data modelling.
+
+The objective is to provide a reproducible, evidence-based understanding of long-term demographic trends and cross-country differences within the European Union. **Data processing, statistical analysis, and visualisations were completed in R; the final research report was prepared separately and manually outside R.**
+
+## Research Objectives
+
+1. Examine changes in the proportion of the population aged 65 and above across EU countries.
+2. Analyse trends and national differences in life expectancy at birth.
+3. Investigate female–male life expectancy gaps.
+4. Assess disruptions in life expectancy during 2020–2022 and subsequent recovery.
+5. Evaluate the association between population ageing and life expectancy using statistical regression models.
+
+## Data Sources
+
+The study uses two official Eurostat datasets:
+
+- **Life Expectancy by Age and Sex:** [`demo_mlexpec`](https://ec.europa.eu/eurostat/databrowser/view/demo_mlexpec/default/table?lang=en)
+- **Population on 1 January by Age and Sex:** [`demo_pjan`](https://ec.europa.eu/eurostat/databrowser/view/demo_pjan/default/table?lang=en)
+
+**Study Period:** 2010–2024\
+**Geographical Coverage:** 27 European Union countries\
+**Country-Year Observations:** 405\
+**Country-Year-Sex Observations:** 1,215
+
+Data were processed to construct a balanced panel covering all 27 countries over 15 years.
+
+## Methodology
+
+The statistical analysis was conducted using **R**.
+
+The primary analytical techniques include:
+
+- Data cleaning, transformation, and validation
+- Descriptive statistics and comparative analysis
+- Time-series visualisation and cross-country comparisons
+- Pooled Ordinary Least Squares (OLS) regression
+- Country and year fixed-effects regression
+- Country-clustered standard errors
+- Sensitivity analysis excluding 2020–2022
+- Model diagnostics and robustness checks
+
+The project includes five main research visualisations, an additional regression diagnostic panel, and statistical summary tables. The final written report was assembled manually using these analytical outputs.
+
+## Key Research Findings
+
+| Indicator                         |        2010 |        2024 |
+| --------------------------------- | ----------: | ----------: |
+| Average population aged 65+       |      16.49% |      20.69% |
+| Average life expectancy           | 78.74 years | 80.89 years |
+| Average female–male longevity gap |  6.45 years |  5.45 years |
+
+**Major Findings:**
+
+- Population ageing and life expectancy increased across all 27 EU countries.
+- Spain recorded the highest life expectancy in 2024 at **84.0 years**, while Bulgaria recorded the lowest at **75.8 years**.
+- Poland experienced the largest increase in its population aged 65+, rising by **6.91 percentage points**.
+- Latvia recorded the largest female–male life expectancy gap in 2024 at **9.8 years**.
+- Average life expectancy declined during the 2020–2021 period before recovering by 2024.
+- Fixed-effects regression produced an estimated coefficient of **−0.142 years** per percentage-point increase in the older-age share, with a 95% confidence interval of **−0.293 to 0.009**.
+- The association weakened when 2020–2022 were excluded, indicating sensitivity to the study period.
+
+The findings highlight substantial demographic changes and persistent differences between EU countries. However, the regression results do not establish a clear or stable causal relationship between population ageing and longevity.
+
+## Project Structure
+
+The project documentation identifies the following components:
+
+- `eu-demography.Rproj`: RStudio project configuration.
+- `R/`: R scripts for data processing, statistical analysis, and visualisation.
+- `results/`: Statistical outputs, summary tables, and audit records.
+- `original_scripts/`: Archived original analysis scripts.
+- **Final research report (PDF):** Manually prepared research write-up presenting the methodology, results, figures, discussion, and references.
+
+## Reproducibility
+
+The **R analysis and its statistical outputs** can be reproduced from the project scripts and the corresponding Eurostat source extracts. **The final PDF report was prepared manually outside R and is not automatically generated by running the R scripts.**
+
+To reproduce the statistical analysis:
+
+1. Install R and RStudio, along with the required R packages.
+2. Ensure that the archived Eurostat CSV files are available in the locations expected by the scripts.
+3. Open `eu-demography.Rproj`.
+4. Run the relevant R scripts in their documented order to recreate the processed data, statistical models, tables, and visualisations.
+5. Consult the separately prepared PDF report for the complete research interpretation and discussion.
+
+**Main software and packages:**
+
+- R 4.3.3 (recorded verification environment)
+- dplyr
+- tidyr
+- readr
+- ggplot2
+- here
+- fixest
+
+The recorded R software environment is documented in `results/session_info.txt`.
+
+## Research Limitations
+
+This study uses country-level observational data and cannot establish causal relationships.
+
+Differences in population composition, migration, fertility, healthcare, and other unobserved factors may influence demographic outcomes.
+
+Additionally, Eurostat data may contain provisional estimates, revisions, and breaks in statistical series. These limitations are discussed in the complete research report.
+
+## Conclusion
+
+The research demonstrates that population ageing and life expectancy increased across all EU-27 countries between 2010 and 2024, although the magnitude of demographic change varied considerably.
+
+Despite improvements in longevity and a narrowing average female–male life expectancy gap, significant differences persisted between countries.
+
+The study contributes a reproducible statistical examination of demographic change using official European data and panel-data modelling.
+
+## Author
+
+**Adil Amin**\
+Department of Statistics\
+GC University Lahore
+
+**Data Source:** Eurostat\
+**Research Period:** 2010–2024
+
+
+
+
